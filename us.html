@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="./images/movie logo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Flix - About Us
+    </title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- OWL CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="app.css">
+    
+    <!-- ABOUT US PAGE SPECIFIC STYLES -->
+    <style>
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px 0;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-section {
+            background-color: var(--box-bg);
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--main-color);
+            padding-left: 15px;
+        }
+        
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+        
+        .team-section {
+            margin-bottom: 60px;
+        }
+        
+        /* Added team-member-wrapper for proper spacing */
+        .team-member-wrapper {
+            padding: 0 15px;
+            margin-bottom: 30px;
+        }
+        
+        .team-member {
+            background-color: var(--box-bg);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid transparent;
+            height: 100%;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-top: 4px solid var(--main-color);
+        }
+        
+        .member-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 4px solid var(--main-color);
+        }
+        
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+        
+        .member-role {
+            font-size: 1rem;
+            color: var(--main-color);
+            margin-bottom: 15px;
+        }
+        
+        .member-bio {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .member-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        .member-social a:hover {
+            background-color: var(--main-color);
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--main-color);
+        }
+        
+        .contact-item a {
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--main-color);
+        }
+        
+        .active-nav-item {
+            color: var(--main-color) !important;
+            font-weight: 700;
+        }
+        
+        /* Center Mike's card */
+        .center-card {
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Responsive adjustments */
+        @media only screen and (max-width: 850px) {
+            .about-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="nav">
+                <a href="index.html" class="logo">
+                    <i class='bx bx-movie-play bx-tada main-color'></i>Fl<span class="main-color">i</span>x
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="genre.html">Genre</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="series.html">Series</a></li>
+                    <li><a href="us.html" class="active-nav-item">About</a></li>
+                    <li>
+                        <a href="log.html" class="btn btn-hover">
+                            <span>Sign in</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- MOBILE MENU TOGGLE -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END NAV -->
+
+    <!-- ABOUT US SECTION -->
+    <div class="section">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">About Flix</h1>
+                <p class="page-subtitle">Your ultimate destination for the best movies and TV shows</p>
+            </div>
+            
+            <div class="about-section">
+                <h2 class="section-title">Our Story</h2>
+                <div class="about-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at sapien enim. Etiam eu dui vel nisl vulputate aliquet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent id tristique mi. Vivamus vitae semper magna, eu lacinia neque. Fusce ac risus eget lectus convallis venenatis.</p>
+                    <p>Morbi dapibus, sapien non efficitur tempus, urna libero ultrices orci, non cursus orci nisl eu quam. Suspendisse potenti. Donec lacinia, ipsum ac ullamcorper consectetur, risus ipsum dictum nisi, at tristique mi justo eget felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc auctor odio sit amet mi lacinia, at lacinia lectus eleifend.</p>
+                    <p>Etiam vel turpis vel magna vulputate aliquam. Nulla facilisi. Fusce sodales magna sit amet neque vehicula, vel malesuada mi venenatis. Morbi eget mi lacinia, volutpat risus nec, convallis dui. Proin aliquam gravida convallis. Aenean pellentesque, arcu id tempus tristique, purus arcu tincidunt eros, in pretium mi magna vel felis.</p>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Our Team</h2>
+            <div class="row team-section">
+                <!-- Added team-member-wrapper for John -->
+                <div class="col-4 col-md-6 col-sm-12 team-member-wrapper">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Team Member">
+                        </div>
+                        <h3 class="member-name">John Doe</h3>
+                        <p class="member-role">Founder & CEO</p>
+                        <p class="member-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis neque auctor mauris semper, ac pellentesque ex volutpat. Praesent egestas nibh sit amet aliquet eleifend.</p>
+                        <div class="member-social">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                            <a href="#"><i class='bx bxl-linkedin'></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Added team-member-wrapper for Jane -->
+                <div class="col-4 col-md-6 col-sm-12 team-member-wrapper">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Team Member">
+                        </div>
+                        <h3 class="member-name">Jane Smith</h3>
+                        <p class="member-role">Creative Director</p>
+                        <p class="member-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis neque auctor mauris semper, ac pellentesque ex volutpat. Praesent egestas nibh sit amet aliquet eleifend.</p>
+                        <div class="member-social">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                            <a href="#"><i class='bx bxl-linkedin'></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Added team-member-wrapper for Mike and center-card class -->
+                <div class="col-4 col-md-6 col-sm-12 team-member-wrapper center-card">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Team Member">
+                        </div>
+                        <h3 class="member-name">Mike Johnson</h3>
+                        <p class="member-role">Lead Developer</p>
+                        <p class="member-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis neque auctor mauris semper, ac pellentesque ex volutpat. Praesent egestas nibh sit amet aliquet eleifend.</p>
+                        <div class="member-social">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                            <a href="#"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-section">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="about-content">
+                    <p>We'd love to hear from you! Whether you have a question about our services, pricing, or just want to say hello, our team is ready to answer all your questions.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class='bx bxs-envelope'></i>
+                            <a href="mailto:contact@flix.com">contact@flix.com</a>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class='bx bxs-phone'></i>
+                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class='bx bxs-map'></i>
+                            <span>123 Movie Street, Hollywood, CA 90210, USA</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class='bx bxl-linkedin'></i>
+                            <a href="https://linkedin.com" target="_blank">linkedin.com/company/flix</a>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class='bx bxl-twitter'></i>
+                            <a href="https://twitter.com" target="_blank">@flixofficial</a>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class='bx bxl-instagram'></i>
+                            <a href="https://instagram.com" target="_blank">@flix_movies</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END ABOUT US SECTION -->
+
+    <!-- FOOTER SECTION -->
+    <footer class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-md-6 col-sm-12">
+                    <div class="content">
+                        <a href="#" class="logo">
+                            <i class='bx bx-movie-play bx-tada main-color'></i>Fl<span class="main-color">i</span>x
+                        </a>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut veniam ex quos hic id nobis beatae earum sapiente! Quod ipsa exercitationem officiis non error illum minima iusto et. Dolores, quibusdam?
+                        </p>
+                        <div class="social-list">
+                            <a href="#" class="social-item">
+                                <i class="bx bxl-facebook"></i>
+                            </a>
+                            <a href="#" class="social-item">
+                                <i class="bx bxl-twitter"></i>
+                            </a>
+                            <a href="#" class="social-item">
+                                <i class="bx bxl-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-3 col-md-6 col-sm-6">
+                            <div class="content">
+                                <p><b>Flix</b></p>
+                                <ul class="footer-menu">
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">My profile</a></li>
+                                    <li><a href="#">Pricing plans</a></li>
+                                    <li><a href="#">Contacts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-6 col-sm-6">
+                            <div class="content">
+                                <p><b>Browse</b></p>
+                                <ul class="footer-menu">
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">My profile</a></li>
+                                    <li><a href="#">Pricing plans</a></li>
+                                    <li><a href="#">Contacts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-6 col-sm-6">
+                            <div class="content">
+                                <p><b>Help</b></p>
+                                <ul class="footer-menu">
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">My profile</a></li>
+                                    <li><a href="#">Pricing plans</a></li>
+                                    <li><a href="#">Contacts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-3 col-md-6 col-sm-6">
+                            <div class="content">
+                                <p><b>Download app</b></p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="#">
+                                            <img src="./images/google-play.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="./images/app-store.png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER SECTION -->
+
+    <!-- COPYRIGHT SECTION -->
+    <div class="copyright">
+        Copyright 2023  
+    </div>
+    <!-- END COPYRIGHT SECTION -->
+
+    <!-- SCRIPT -->
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- OWL CAROUSEL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+    <!-- APP SCRIPT -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
